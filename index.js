@@ -25,6 +25,7 @@ const butClearEntry = document.querySelector('#btnClearEntry');
 const butClearAll = document.querySelector('#btnClearAll');
 const btnMinus = document.querySelector('#btnMinus');
 const screen = document.querySelector('#screen');
+
 let answerString = " ";
 
 function getString(buttonValue) {
@@ -44,12 +45,12 @@ function clearInput() {
     for(let i = 0; i < answerString.length; i++) {
         stringArr.push(answerString[i]);
     }
-    console.log(answerString);
     answerString = answerString.slice(0, -1);
     let stringWithoutCommas = answerString.replace(/,/g, '');
     console.log(stringWithoutCommas);
     screen.innerHTML = stringWithoutCommas;
 }
+
 
 
 
@@ -79,6 +80,7 @@ butPlus.addEventListener('click', () => {
 
 butThree.addEventListener('click', () => {
     getString(butThree.value);
+    
 })
 
 butFour.addEventListener('click', () => {
@@ -113,6 +115,10 @@ butComma.addEventListener('click', () => {
     getString(butComma.value);
 });
 
+butMinus.addEventListener('click', () => {
+    getString(butMinus.value);
+})
+
 butBrackOne.addEventListener('click', () => {
     getString(butBrackOne.value);
 })
@@ -133,6 +139,7 @@ butClearEntry.addEventListener('click', () => {
 butMinus.addEventListener('click', () => {
     getString(butMinus.value);
 })
+ 
 
 answerBtn.addEventListener('click', getAnswer);
 clear.addEventListener('click', clearInput);
