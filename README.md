@@ -1,2 +1,3 @@
 # Calculator
-Calculator on website
+-Responsive calculator using JavaScript, HTML and CSS
+
