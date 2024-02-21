@@ -2,11 +2,11 @@
     background-color: rgb(185, 235, 6);
     padding: 3.5rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+
 }
 
-.title{
+#title{
     background-color: white;
     width: 20rem;
     text-align: center;
@@ -47,5 +47,27 @@
     background-color: rgb(75, 74, 74);
     color: rgb(255, 255, 255);
 }
+
+#footer {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+#box {
+    background-color: white;
+    color: white; 
+    margin-right: 5rem;  
+}
+
+
+#box:hover {
+    animation: rotate 3s;
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+
 
 

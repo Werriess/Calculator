@@ -19,8 +19,11 @@ function getString(buttonValue) {
 }
 
 function getAnswer() {
-    let test = answerString.split('x' || '+')
+    let test = answerString.split(',')
     console.log(test);
+    
+    let answer = parseInt(test[0]) * parseInt(test[1]);
+    console.log(answer);
 }
 
 function getAction() {
