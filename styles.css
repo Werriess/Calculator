@@ -68,7 +68,7 @@ body {
     background-color: rgb(255, 255, 255);
     color: white; 
     margin-right: 5rem;
-    margin-left: 5rem;  
+    margin-left: 5rem; 
 }
 
 
@@ -82,18 +82,5 @@ body {
     
 }
 
-.screen {
-    display: grid;
-    /*vat grid weg as jy als responsive wil he*/
-}
-
-.show-text {
-    text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    color: rgb(241, 236, 236) ;
-    
-    
-}
 
 
