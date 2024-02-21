@@ -6,7 +6,7 @@ const butNumTwo = document.querySelector('#butNTwo')
 const butThree = document.querySelector('#btnThree');
 const butFour = document.querySelector('#btnFour');
 const butFive = document.querySelector('#btnFive');
-const butSix = document.querySelector('#btnSix')
+const butSix = document.querySelector('#btnSix');
 const butSeven = document.querySelector('#btnSeven');
 const butEight = document.querySelector('#btnEight');
 const butNine = document.querySelector('#btnNine');
@@ -23,37 +23,21 @@ const textBox = document.querySelector('#show');
 const clear = document.querySelector('#clear');
 const butClearEntry = document.querySelector('#btnClearEntry');
 const butClearAll = document.querySelector('#btnClearAll');
+const btnMinus = document.querySelector('#btnMinus');
+const screen = document.querySelector('#screen');
 let answerString = " ";
-let value = " ";
-let operator = " ";
-
 
 function getString(buttonValue) {
     
     answerString += buttonValue;
+    screen.innerHTML = answerString;
     console.log(answerString);  
 }
 
 function getAnswer() {
-    let test = answerString.split('x')
-    console.log(test);
-    
-    for(let j = test.length - 1; j >= 0; j--) {
-        if(test.length > 2) {
-            value = (test[j] * test[j-1]) + parseInt(test[j-2] || - parseInt(test[j-2]));
-            console.log(value)
-        }
-        else {
-            value = parseInt(test[j]) * parseInt(test[j-1]);
-            console.log(value)
-        }
-    }
+    console.log(eval(answerString))
+    screen.innerHTML = eval(answerString);
 }
-
-function getOperator() {
-
-}
-
 
 function clearInput() {
     let stringArr = [];
@@ -64,6 +48,7 @@ function clearInput() {
     answerString = answerString.slice(0, -1);
     let stringWithoutCommas = answerString.replace(/,/g, '');
     console.log(stringWithoutCommas);
+    screen.innerHTML = stringWithoutCommas;
 }
 
 
@@ -142,6 +127,11 @@ butClearAll.addEventListener('click', () => {
 
 butClearEntry.addEventListener('click', () => {
     answerString = " ";
+    screen.innerHTML = answerString;
+})
+
+butMinus.addEventListener('click', () => {
+    getString(butMinus.value);
 })
 
 answerBtn.addEventListener('click', getAnswer);
