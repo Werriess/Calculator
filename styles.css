@@ -39,7 +39,7 @@ body {
 .content {
     display: flex;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
     padding-bottom: 3rem;
     background-color: rgb(241, 236, 236);
 }
@@ -70,8 +70,23 @@ body {
 }
 @keyframes rotate {
     0% { transform: rotate(0deg);}
+    50% {transform: rotate(-90deg);}
     100%{ transform: rotate(360deg);}
+    
 }
 
+.screen {
+    display: grid;
+    /*vat grid weg as jy als responsive wil he*/
+}
+
+.show-text {
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: rgb(241, 236, 236) ;
+    
+    
+}
 
 

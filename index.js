@@ -23,6 +23,7 @@ const textBox = document.querySelector('#show');
 const clear = document.querySelector('#clear');
 const butClearEntry = document.querySelector('#btnClearEntry');
 const butClearAll = document.querySelector('#btnClearAll');
+const screen = document.querySelector('#screen-S');
 let answerString = " ";
 let value = " ";
 let operator = " ";
@@ -31,6 +32,8 @@ let operator = " ";
 function getString(buttonValue) {
     
     answerString += buttonValue;
+    screen.style.color = "black";
+    screen.innerHTML = answerString;
     console.log(answerString);  
 }
 
@@ -60,11 +63,12 @@ function clearInput() {
     for(let i = 0; i < answerString.length; i++) {
         stringArr.push(answerString[i]);
     }
-    console.log(answerString);
     answerString = answerString.slice(0, -1);
     let stringWithoutCommas = answerString.replace(/,/g, '');
     console.log(stringWithoutCommas);
+    screen.innerHTML = stringWithoutCommas;
 }
+
 
 
 
@@ -94,6 +98,7 @@ butPlus.addEventListener('click', () => {
 
 butThree.addEventListener('click', () => {
     getString(butThree.value);
+    
 })
 
 butFour.addEventListener('click', () => {
@@ -128,6 +133,10 @@ butComma.addEventListener('click', () => {
     getString(butComma.value);
 });
 
+butMinus.addEventListener('click', () => {
+    getString(butMinus.value);
+})
+
 butBrackOne.addEventListener('click', () => {
     getString(butBrackOne.value);
 })
@@ -142,6 +151,7 @@ butClearAll.addEventListener('click', () => {
 
 butClearEntry.addEventListener('click', () => {
     answerString = " ";
+    screen.style.color = "rgb(241, 236, 236)";
 })
 
 answerBtn.addEventListener('click', getAnswer);
